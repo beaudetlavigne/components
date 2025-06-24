@@ -1,3 +1,4 @@
+// components/VideoPlayer.jsx
 import ReactPlayer from "react-player";
 export const VideoPlayer = () => (
   <section className="p-6 text-center">

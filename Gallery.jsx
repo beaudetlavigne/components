@@ -1,3 +1,4 @@
+// components/Gallery.jsx
 export const Gallery = () => {
   const images = [
     "/images/scene1.jpg",

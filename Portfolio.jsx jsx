@@ -1,0 +1,25 @@
+-- components/Portfolio.jsx
+export const Portfolio = () => {
+  const tracks = [
+    { title: "Cinematic Intro", src: "/audio/intro.mp3" },
+    { title: "Dreamy Theme", src: "/audio/theme.mp3" },
+    { title: "Epic Trailer", src: "/audio/trailer.mp3" }
+  ];
+
+  return (
+    <section className="p-6">
+      <h3 className="text-2xl font-bold text-center mb-4">🎵 Portfolio Musical</h3>
+      <div className="space-y-4 max-w-xl mx-auto">
+        {tracks.map((track, i) => (
+          <div key={i} className="bg-neutral-800 p-4 rounded-xl">
+            <p className="font-semibold mb-2">{track.title}</p>
+            <audio controls className="w-full">
+              <source src={track.src} type="audio/mpeg" />
+              Votre navigateur ne supporte pas l'audio HTML5.
+            </audio>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};

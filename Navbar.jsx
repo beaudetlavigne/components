@@ -1,15 +1,30 @@
-// components/Navbar.jsx
-import { FormattedMessage } from "react-intl";
-export const Navbar = ({ locale, setLocale }) => (
-  <nav className="p-4 flex justify-between items-center bg-black">
-    <h1 className="text-xl font-bold">🎶 Composer</h1>
-    <select
-      className="bg-neutral-800 text-white p-1 rounded"
-      value={locale}
-      onChange={(e) => setLocale(e.target.value)}
-    >
-      <option value="fr">FR</option>
-      <option value="en">EN</option>
-    </select>
-  </nav>
-);
+import { useTranslation } from 'react-i18next';
+
+export const Navbar = () => {
+  const { t } = useTranslation();
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <nav className="flex justify-center gap-6 p-4 bg-black text-white sticky top-0 z-50 shadow-lg">
+      <button onClick={() => scrollTo('hero')} className="hover:text-blue-400">
+        {t("menu.home")}
+      </button>
+      <button onClick={() => scrollTo('gallery')} className="hover:text-blue-400">
+        {t("menu.gallery")}
+      </button>
+      <button onClick={() => scrollTo('video')} className="hover:text-blue-400">
+        {t("menu.video")}
+      </button>
+      <button onClick={() => scrollTo('portfolio')} className="hover:text-blue-400">
+        {t("menu.portfolio")}
+      </button>
+      <button onClick={() => scrollTo('contact')} className="hover:text-blue-400">
+        {t("menu.contact")}
+      </button>
+    </nav>
+  );
+};

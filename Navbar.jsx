@@ -1,3 +1,4 @@
+// components/Navbar.jsx
 import { FormattedMessage } from "react-intl";
 export const Navbar = ({ locale, setLocale }) => (
   <nav className="p-4 flex justify-between items-center bg-black">

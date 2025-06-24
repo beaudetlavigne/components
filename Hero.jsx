@@ -1,3 +1,4 @@
+// components/Hero.jsx
 import { FormattedMessage } from "react-intl";
 export const Hero = () => (
   <header className="text-center p-10">
